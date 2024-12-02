@@ -43,9 +43,9 @@ class LoginViewModel @Inject constructor()  : ViewModel() {
 
     fun updateLoginListState() {
         listaLogin.forEach {
-            it.value = false
+            it.value to false
         }
-        listaLogin[loginOptionSelected.value] = true
+        listaLogin[loginOptionSelected.value] to true
     }
 
     fun updateLoginOptionSelected(newOption: String) {
