@@ -27,38 +27,41 @@ class LoginViewModel @Inject constructor()  : ViewModel() {
     private var _showDialog = MutableStateFlow(false)
     var showDialog: StateFlow<Boolean> = _showDialog.asStateFlow()
 
+    /* Variables y funciones de lista de idiomas */
     var languagueList = mutableMapOf<String, Boolean>("Español" to true, "Ingles" to false , "Aleman" to false, "Frances" to false)
 
-    var _languageSelected = mutableStateOf("ES") // Inicializa con el idioma seleccionado
+    private var _languageSelected = mutableStateOf("ES") // Inicializa con el idioma seleccionado
     var languageSelected = _languageSelected
 
     fun updateSelectedLanguage(newLanguage: String) {
         _languageSelected.value = newLanguage.toString().take(2).uppercase()
     }
 
-    var listaLogin = mutableMapOf<String, Boolean>("Otros" to true,"Facebook" to false, "Office365" to false , "Twitter" to false, "Linkedin" to false)
+    /* Variables y funciones de lista de Opciones para hacer login */
+    var listaLogin = mutableMapOf<String, Boolean>("Otros" to true,"Facebook" to false, "Office365" to false , "Twitter" to false, "LinkedIn" to false)
 
-    var _loginOptionSelected = mutableStateOf("Otros")
+    private var _loginOptionSelected = mutableStateOf("Otros")
     var loginOptionSelected = _loginOptionSelected
 
     fun updateLoginListState() {
         listaLogin.forEach {
             it.value to false
         }
-        listaLogin[loginOptionSelected.value] to true
+        listaLogin[_loginOptionSelected.value] to true
     }
 
     fun updateLoginOptionSelected(newOption: String) {
-        loginOptionSelected.value = newOption
+        _loginOptionSelected.value = newOption
     }
 
+    /* Padding Globales */
     val defaultPadding = 24.dp
     val mediumPadding = 4.dp
 
     //Usuarios registrados
-    val registeredUsers: List<User> = listOf(User("hola", "hola"),)
+    val registeredUsers: List<User> = listOf(User("hola", "hola"))
 
-    // Functions to update the state (e.g., updateEmail, updatePassword, etc.)
+    // Funciones para actulizar estados (updateEmail, updatePassword, etc.)
     fun updateEmail(newEmail: String) {
         _email.value = newEmail
     }

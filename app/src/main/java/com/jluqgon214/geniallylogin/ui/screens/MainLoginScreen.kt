@@ -2,7 +2,6 @@ package com.jluqgon214.geniallylogin.ui.screens
 
 import android.widget.Toast
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -44,7 +43,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.jluqgon214.geniallylogin.R
-import com.jluqgon214.geniallylogin.components.showDialog
+import com.jluqgon214.geniallylogin.components.ShowDialog
 import com.jluqgon214.geniallylogin.data.LoginViewModel
 import com.jluqgon214.geniallylogin.ui.theme.ButtonColor
 import com.jluqgon214.geniallylogin.ui.theme.UnboundedExtraBold
@@ -64,7 +63,7 @@ fun MainLoginScreen(modifier: Modifier) {
 
     // Contenido de la pantalla
     if (showDialog.value) {
-        showDialog(
+        ShowDialog(
             onDismissRequest = { viewModel.updateShowDialog(false) }
         )
     }
