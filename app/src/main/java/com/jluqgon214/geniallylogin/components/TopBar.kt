@@ -115,15 +115,15 @@ fun TopBar(modifier: Modifier) {
                         onDismissRequest = { expanded.value = false },
                         scrollState = scrollState
                     ) {
-                        viewModel.languagueList.forEach() {
+                        viewModel.languagueList.forEach {idioma ->
                             DropdownMenuItem(
-                                text = { Text(it.key) },
+                                text = { Text(idioma.key) },
                                 onClick = {
-                                    viewModel.updateSelectedLanguage(it.key.toString())
+                                    viewModel.updateSelectedLanguage(idioma.key.toString())
                                     expanded.value = false
                                 },
                                 trailingIcon = {
-                                    if (viewModel.languageSelected.value == it.key.take(2).uppercase()) {
+                                    if (viewModel.languageSelected.value == idioma.key.take(2).uppercase()) {
                                         Icon(
                                             Icons.Default.Check,
                                             contentDescription = "Languague Selected"

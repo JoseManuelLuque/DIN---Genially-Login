@@ -23,8 +23,7 @@ import androidx.compose.ui.window.Dialog
 import com.jluqgon214.geniallylogin.data.LoginViewModel
 
 @Composable
-fun ShowDialog(onDismissRequest: () -> Unit) {
-    val viewModel: LoginViewModel = LoginViewModel()
+fun ShowDialog(viewModel: LoginViewModel, onDismissRequest: () -> Unit) {
     Dialog(
         onDismissRequest = { onDismissRequest() },
     )

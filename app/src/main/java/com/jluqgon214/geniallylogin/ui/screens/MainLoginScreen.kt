@@ -64,7 +64,8 @@ fun MainLoginScreen(modifier: Modifier) {
     // Contenido de la pantalla
     if (showDialog.value) {
         ShowDialog(
-            onDismissRequest = { viewModel.updateShowDialog(false) }
+            viewModel = viewModel,
+            onDismissRequest = {viewModel.updateShowDialog(false) }
         )
     }
 
