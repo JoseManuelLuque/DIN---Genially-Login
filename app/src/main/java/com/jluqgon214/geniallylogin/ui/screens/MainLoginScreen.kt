@@ -272,29 +272,37 @@ fun MainLoginScreen(modifier: Modifier) {
             Text(text = "Entrar")
         }
 
-        Text(
-            text = "Entrar con single sing-on(SSO)",
-            modifier = Modifier.align(Alignment.CenterHorizontally),
-            textDecoration = TextDecoration.Underline
-        )
-
-        HorizontalDivider(modifier = Modifier.fillMaxWidth())
-
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.Center
-        ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = viewModel.defaultPadding)
+                .align(Alignment.CenterHorizontally),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement =  Arrangement.spacedBy(viewModel.defaultPadding)
+        ){
             Text(
-                text = "¿Aún no tienes una cuenta?",
-                fontSize = 12.sp,
-                modifier = Modifier.padding(4.dp)
+                text = "Entrar con single sing-on(SSO)",
+                textDecoration = TextDecoration.Underline
             )
-            Text(
-                text = "Registrate",
-                textDecoration = TextDecoration.Underline,
-                fontSize = 12.sp,
-                modifier = Modifier.padding(4.dp)
-            )
+
+            HorizontalDivider(modifier = Modifier.fillMaxWidth())
+
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.Center
+            ) {
+                Text(
+                    text = "¿Aún no tienes una cuenta?",
+                    fontSize = 12.sp,
+                    modifier = Modifier.padding(4.dp)
+                )
+                Text(
+                    text = "Registrate",
+                    textDecoration = TextDecoration.Underline,
+                    fontSize = 12.sp,
+                    modifier = Modifier.padding(4.dp)
+                )
+            }
         }
     }
 }
