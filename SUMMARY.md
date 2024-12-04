@@ -1,3 +1,5 @@
 # Table of contents
 
-* [Page](README.md)
+* [Inicio de sesión de Genially](README.md)
+* [Menu Idiomas](menu-idiomas.md)
+* [Dialogo de inicio de sesión](dialogo-de-inicio-de-sesin-3ta.md)
